@@ -6,7 +6,7 @@ $ mkdir yt8m_video_level
 $ cd yt8m_video_level/
 $ curl us.data.yt8m.org/0/video_level/train/download.py | python
 ```
-The result should look something like this. Goes on for about forever... after 12 hours, I got 6GB downloaded on my laptop so I stopped.
+The result looks something like this. Goes on for about forever... after 12 hours, I got 6GB downloaded on my laptop so I stopped.
 
 ```
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
