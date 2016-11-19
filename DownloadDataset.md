@@ -39,3 +39,27 @@ Use code from google group: https://groups.google.com/d/msg/youtube8m-users/yEDz
 python yt8m_parse.py video /PATH/TO/YOUR/VIDEO/LEVEL/DIR/*.tfrecord
 python yt8m_parse.py frame /PATH/TO/YOUR/FRAME/LEVEL/DIR/*.tfrecord
 ```
+
+Install ADAM and unzip
+```
+wget https://repo1.maven.org/maven2/org/bdgenomics/adam/adam-distribution/0.16.0/adam-distribution-0.16.0-bin.tar.gz
+tar -xvzf adam-distribution-0.16.0-bin.tar.gz
+```
+Recompile
+
+```
+wget http://ftp.wayne.edu/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+tar zxvf apache-maven-3.3.9-bin.tar.gz
+export PATH=$PATH:~/apache-maven-3.3.9/bin
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz"
+tar xvfz jdk-8u45-linux-x64.tar.gz
+export JAVA_HOME=jdk1.8.0_45/
+```
+And when I got to this part, there is no 'adam' directory.
+
+```
+[root@spark1 ~]# cd adam
+-bash: cd: adam: No such file or directory
+```
+
+
