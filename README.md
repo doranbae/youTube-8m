@@ -1,2 +1,3 @@
 # youTube-8m
-youTube-8m dataset
+Goal for Nov. 26
+- to have working code
