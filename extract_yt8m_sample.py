@@ -10,6 +10,8 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 from itertools import repeat
+import pyes # For documentation around pyes.es : https://pyes.readthedocs.org/en/latest/references/pyes.es.html
+import json
 
 #Set API Key
 pafy.set_api_key("AIzaSyCnrbLP8V3zdMwG9kaTaCmeq49nNqyEpZ8")
@@ -24,7 +26,8 @@ series = KgraphID["KnowledgeGraphID"]
 series = series.str.replace('/m/','') #Remove '/m/'
 
 #Extract video ID and keywords and make it into a table
-KgraphIDList_sample = series
+series_sample = series[4796:4799]
+KgraphIDList_sample = series_sample
 total_list = []
 total_k = []
 empty_frames = []
@@ -76,3 +79,25 @@ t = pd.DataFrame(
 #Merge with result DataFrame on vID
 t.merge(result,on='vID',how ='left')
 
+
+### Push data into Elasticsearch
+
+# Add index to t.
+t["index_col"] = range(1,len(t)+1)
+
+# Convert a panda's dataframe to json
+tmp = t.reset_index().to_json(orient="records")
+#print df
+
+# Load dach record into jon format before bulk
+tmp_json = json.loads(tmp)
+#print tmp_json[1]
+
+# Create an index into elastic search. if we need to create mapping, we do it here.
+index_name = 'yt-8m_to_elastic'
+type_name = 'pyelastic'
+es = pyes.ES()
+
+# Bulk index
+for doc in tmp_json:
+    es.index(doc, index_name, type_name, id = doc['index_col'])
