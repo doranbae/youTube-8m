@@ -1,33 +1,58 @@
-#Searchkit
-Searchkit is a suite of UI components built in react. The aim is to easily create search applications in ElasticSearch. Full documentation can be found [here](http://docs.searchkit.co/stable/index.html).
-Our group decided to use Searchkit for the following reasons.
+#Project Setup
+ddd
 * Reason 1
 * Reason 2
 * Reason 3
 
-##1. Project Setup
-###Installing via NPM
-####Download Node.js
-Download Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, and you can download it [here](https://nodejs.org/en/)
-I downloaded v6.9.1 LTS, recommended for most users.
-Test it if you've got the node installed correctly on your computer.
-To see if Node is installed, type `node -v` on your command line.
+###1. Provision VM
+Installed:
 ```
-v6.9.1
+slcli vs create --datacenter=sjc01 --domain=finalProject.com --hostname=yt_8m --os=CENTOS_LATEST_64 --cpu=2 --memory=4096 --billing=hourly --disk=100 --key=<mykey>
 ```
-To see if npm is installed, type `npm -v` on your command line.
-```
-3.10.8
-```
-####Install searchkit
-```
-$ npm install searchkit
-```
-If you run into any trouble find answers [here](https://www.npmjs.com/package/searchkit/tutorial)
+###2. Install pre-requisites
 
-##2. Connecting to Elasticsearch instance
-###Using local ES Server
-Initially I set searchkit up on my local machine. 
+```
+yum install -y epel-release && yum install -y java-1.8.0-openjdk-headless net-tools jq
+```
+Set the proper location of JAVA_HOME and test it:
+
+```
+echo export JAVA_HOME=\"$(readlink -f $(which java) | grep -oP '.*(?=/bin)')\" >> /root/.bash_profile
+source /root/.bash_profile
+$JAVA_HOME/bin/java -version
+```
+
+Download the Elasticsearch tarball:
+
+```
+curl -OL https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.0.tar.gz
+tar xzf elasticsearch-1.7.0.tar.gz
+
+```
+
+###3. Install python libraries
+```
+yum -y update
+yum -y install python-pip
+```
+And install everything you need to run this code.
+
+```
+python yt_8m2es.py
+```
+###3. Install cool UI from class
+
+```
+bin/plugin install jettro/elasticsearch-gui 
+```
+
+Go to my web browser and type this `http://198.23.84.123:9200/_plugin/gui/index.html`.
+
+###4. Set-up Searchkit
 
 
-###Using cloud
+
+
+
+
+
