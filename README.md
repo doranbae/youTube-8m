@@ -1,6 +1,6 @@
 # Simple search project using Youtube-8m dataset and ElasticSearch
 
-[YouTube-8m](https://research.google.com/youtube8m/) dataset is a large-scale labeled video collection that consists of 8 million YouTube video IDs and associated labels from a diverse vocabulary of 4800 visual entities (aka, "Google Knowledge Graph"). More about Google Knowldege Graph [here](https://www.google.com/intl/bn/insidesearch/features/search/knowledge.html). This project will be in three parts: grab video IDs by Google Knowledge Graph Keywords; retrieving metadata using YouTube API; and sending the data to ElasticSearch.
+[YouTube-8m](https://research.google.com/youtube8m/) dataset is a large-scale labeled video collection that consists of 8 million YouTube video IDs and associated labels from a diverse vocabulary of 4800 visual entities (aka, "Google Knowledge Graph"). More about Google Knowldege Graph [here](https://www.google.com/intl/bn/insidesearch/features/search/knowledge.html). 
 
 ## 1. Prerequisites
 #### Requirements
