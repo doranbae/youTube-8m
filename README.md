@@ -22,6 +22,34 @@ python push2ES.py
 ```
 python push2ES.py
 ```
+#### Instructions (using batch file)
+* Go to `push2ES_batch` folder
+* Copy `retrieveData_batch.py` and `push2ES_batch.py` into a directory
+* Open `push2ES.py`
+* I've changed the code to send DataFrame to ElasticSearch 4800 times, 1 for every knowledge tree entities. 
+```
+i=4700
+
+while i < 4705:
+    print(i)
+    pushCall = push2ES(i)
+    pushCall.pushToES()
+    i=i+1
+else:
+    print("Done")
+```
+* Right now, it is set to send DataFrame to ElasticSearch 5 times from entity[4700] ~ entity[4705]
+* Now I think about it, I think we can make the batch for every 100 entities or so
+* In while loop, every batch gets updated to ElasticSearch. But once I stop the script, and re-run it, it doesn't get updated. So if you are testing multiple times, be sure to delete ElasticSearch index
+```
+curl -XDELETE localhost:9200/youtube
+```
+* Run `push2ES_batch.py` in python
+```
+python push2ES_batch.py
+```
+
+
 
 
 TO DO LIST:
