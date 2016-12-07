@@ -49,6 +49,10 @@ curl -XDELETE localhost:9200/youtube
 python push2ES_batch.py
 ```
 
+#### FIXES
+
+* use `push2ES_batch2.py` and `retrieveData_batch2.py`
+* fixed index id numbering and added column information (description, rating, likes, dislikes, author, published, etc.)
 
 
 
