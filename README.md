@@ -25,7 +25,7 @@ python push2ES.py
 #### Instructions (using batch file)
 * Go to `push2ES_batch` folder
 * Copy `retrieveData_batch.py` and `push2ES_batch.py` into a directory
-* Open `push2ES.py`
+* Open `push2ES_batch.py`
 * I've changed the code to send DataFrame to ElasticSearch 4800 times, 1 for every knowledge tree entities. 
 ```
 i=4700
