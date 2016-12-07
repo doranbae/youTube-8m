@@ -53,6 +53,7 @@ python push2ES_batch.py
 
 * use `push2ES_batch2.py` and `retrieveData_batch2.py`
 * fixed index id numbering and added column information (description, rating, likes, dislikes, author, published, etc.)
+* added exception handling
 
 
 
