@@ -17,7 +17,7 @@ class retrieveAPIData :
 
     def __init__(self):
         # Set my YouTube API Key
-        pafy.set_api_key("AIzaSyCnrbLP8V3zdMwG9kaTaCmeq49nNqyEpZ8")
+        pafy.set_api_key("your_API_Key_here")
         urllib.URLopener().retrieve("http://research.google.com/youtube8m/csv/train-labels-histogram.csv" , "labels.csv")
 
         #data variables
