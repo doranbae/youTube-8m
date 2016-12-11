@@ -7,17 +7,18 @@
 * HDFS
 * ElasticSearch
 * Kibana 
+* Python libraries: pafy, csv, json, itertools, pandas, numpy, requests, urllib
 
 #### Provision VMs
-* 64GB memory
-* CentOS 
+* Hardware: 8 CPU, 32 GB
+* Connection: 100 GB local, 1GB network
 
 ## Part 1: Index the Youtube-8M (source) dataset with ElasticSearch 
 #### Instructions 
 * Copy `push2ES_batch2.py` , `retrieveData_batch2.py` into a directory
 * Execute `batchrunpy2.sh`
 
-This shell script is to simultaneously run 100 and 84 instances respectively of the `push2ES_batch.py` script
+This shell script is to simultaneously run 100 and 84 instances respectively of the `push2ES_batch2.py` script
 
 
 ## Part 2: Explore analytics using Kibana
