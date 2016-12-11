@@ -4,7 +4,7 @@
 
 ## Prerequisites
 #### Requirements
-* HDFS
+* Swift
 * ElasticSearch
 * Kibana 
 * Python libraries: pafy, csv, json, itertools, pandas, numpy, requests, urllib
