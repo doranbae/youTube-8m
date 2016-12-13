@@ -13,6 +13,13 @@
 * Hardware: 8 CPU, 32 GB
 * Connection: 100 GB local, 1GB network
 
+## Directions
+#### Parsing TensorFlow data
+* Under `ParseTFrecord` directory, execute `yt8m_parse.py`
+
+#### ElasticSearch
+* Execute `batchrunpy2.sh`
+
 ## Change Log
 
 ### YouTube Retrieve Metadata + Push to ES
